@@ -2,7 +2,7 @@
 
 require '../src/Instagram.php';
 
-use MetzWeb\Instagram\Instagram;
+use IntegReady\Instagram\Instagram;
 
 // initialize class
 $instagram = new Instagram(array(

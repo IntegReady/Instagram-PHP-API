@@ -2,7 +2,7 @@
 
 require '../src/Instagram.php';
 
-use MetzWeb\Instagram\Instagram;
+use IntegReady\Instagram\Instagram;
 
 $instagram = new Instagram('YOUR_APP_KEY');
 
