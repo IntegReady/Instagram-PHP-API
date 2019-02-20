@@ -1,9 +1,9 @@
 {
-	"name": "cosenary/instagram",
+	"name": "integready/instagram",
 	"type": "library",
 	"description": "An easy-to-use PHP Class for accessing Instagram's API.",
 	"keywords": ["instagram", "api"],
-	"homepage": "https://github.com/cosenary/Instagram-PHP-API",
+	"homepage": "https://github.com/integready/Instagram-PHP-API",
 	"license": "BSD",
 	"authors": [
 		{
@@ -18,14 +18,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"MetzWeb\\Instagram\\": "src"
+			"IntegReady\\Instagram\\": "src"
 		}
 	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "2.4-dev"
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	"minimum-stability": "stable"
 }

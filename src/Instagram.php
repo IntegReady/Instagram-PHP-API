@@ -124,7 +124,7 @@ class Instagram
     {
         if (is_array($scopes) && count(array_intersect($scopes, $this->_scopes)) === count($scopes)) {
             return self::API_OAUTH_URL . '?client_id=' . $this->getApiKey() . '&redirect_uri=' . urlencode($this->getApiCallback()) . '&scope=' . implode('+',
-                $scopes) . '&response_type=code';
+                    $scopes) . '&response_type=code';
         }
 
         throw new InstagramException("Error: getLoginUrl() - The parameter isn't an array or invalid scope permissions used.");
@@ -162,7 +162,7 @@ class Instagram
         $auth = false;
 
         if ($id === 0 && isset($this->_accesstoken)) {
-            $id = 'self';
+            $id   = 'self';
             $auth = true;
         }
 
@@ -316,11 +316,11 @@ class Instagram
     public function searchMedia($lat, $lng, $distance = 1000, $minTimestamp = null, $maxTimestamp = null)
     {
         return $this->_makeCall('media/search', false, array(
-            'lat' => $lat,
-            'lng' => $lng,
-            'distance' => $distance,
+            'lat'           => $lat,
+            'lng'           => $lng,
+            'distance'      => $distance,
             'min_timestamp' => $minTimestamp,
-            'max_timestamp' => $maxTimestamp
+            'max_timestamp' => $maxTimestamp,
         ));
     }
 
@@ -549,11 +549,11 @@ class Instagram
     public function getOAuthToken($code, $token = false)
     {
         $apiData = array(
-            'grant_type' => 'authorization_code',
-            'client_id' => $this->getApiKey(),
+            'grant_type'    => 'authorization_code',
+            'client_id'     => $this->getApiKey(),
             'client_secret' => $this->getApiSecret(),
-            'redirect_uri' => $this->getApiCallback(),
-            'code' => $code
+            'redirect_uri'  => $this->getApiCallback(),
+            'code'          => $code,
         );
 
         $result = $this->_makeOAuthCall($apiData);
@@ -630,7 +630,7 @@ class Instagram
         $headers = $this->processHeaders($headerContent);
 
         // get the 'X-Ratelimit-Remaining' header value
-        $this->_xRateLimitRemaining = $headers['X-Ratelimit-Remaining'];
+        $this->_xRateLimitRemaining = empty($headers['X-Ratelimit-Remaining']) ? '' : $headers['X-Ratelimit-Remaining'];
 
         if (!$jsonData) {
             throw new InstagramException('Error: _makeCall() - cURL error: ' . curl_error($ch));
