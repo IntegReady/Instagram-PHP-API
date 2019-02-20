@@ -4,7 +4,7 @@
 	"description": "An easy-to-use PHP Class for accessing Instagram's API.",
 	"keywords": ["instagram", "api"],
 	"homepage": "https://github.com/integready/Instagram-PHP-API",
-	"license": "BSD",
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Christian Metz",
